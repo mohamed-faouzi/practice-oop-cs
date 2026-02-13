@@ -1,24 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        string name = "Mohamed Faouzi";
-        string group = "Group 1"; 
-        string date = DateTime.Now.ToString("yyyy-MM-dd");
+        Student s1 = new Student("Ali", "Ait", new List<double> { 8, 9, 7 });
+        Student s2 = new Student("Sara", "Ben", new List<double> { 6, 7, 8 });
+        Student s3 = new Student("Omar", "El", new List<double> { 9, 9, 10 });
 
-        bool challengeMode = args.Length > 0 && args[0] == "--challenge";
-
-        Random random = new Random();
-        int taskNumber = challengeMode
-            ? random.Next(1, 6)
-            : random.Next(1, 5);
-
-        Console.WriteLine("Random Task Assignment ");
-        Console.WriteLine($"Name: {name}");
-        Console.WriteLine($"Group: {group}");
-        Console.WriteLine($"Date: {date}");
-        Console.WriteLine($"Random task number: {taskNumber}");
+        s1.PrintInfo();
+        s2.PrintInfo();
+        s3.PrintInfo();
     }
 }
